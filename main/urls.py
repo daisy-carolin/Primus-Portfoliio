@@ -8,9 +8,8 @@ urlpatterns = [
    path('blog',views.blog,name='blog'),
    path('contacts',views.contacts,name='contacts'),
    path('book_appointment',views.book_appointment,name='book_appointment'),
-    path('download/<int:file_id>/', views.download_file, name='home'),
+   path('download-cv/', views.download_cv, name='download_cv'),
 
-
-
+  
 
 ]

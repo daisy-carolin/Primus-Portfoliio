@@ -1,13 +1,14 @@
 from django.shortcuts import render, redirect
-
+from django.http import FileResponse
 from .forms import UploadFileForm, UploadFileForm2
 from django.http import HttpResponse
 from .models import UploadedFile
-
+import os
 
 # Create your views here.
 
 def home(request):
+    
     return render(request, 'home.html')
 
 def education(request):
@@ -25,21 +26,9 @@ def contacts(request):
 def book_appointment(request):
     return render(request, 'book_appointment.html')
 
-
-def upload_file(request):
-    if request.method == 'POST':
-        form = UploadFileForm2(request.POST, request.FILES)
-        if form.is_valid():
-            form.save()
-            return redirect('upload_file')
-    else:
-        form = UploadFileForm2()
-    files = UploadedFile.objects.all()
-    return render(request, 'home.html', {'form': form, 'files': files})
-
-def download_file(request, file_id):
-    uploaded_file = UploadedFile.objects.get(pk=file_id)
-    response = HttpResponse(uploaded_file.file, content_type='application/force-download')
-    response['Content-Disposition'] = f'attachment; filename="{uploaded_file.file.name}"'
+def download_cv(request):
+    cv_file_path = 'static/PRIMUS-OCHIENG-CV.pdf'
+    response = FileResponse(open(cv_file_path, 'rb'))
+    response['Content-Type'] = 'application/pdf'
+    response['Content-Disposition'] = f'attachment; filename="{os.path.basename(cv_file_path)}"'
     return response
-
