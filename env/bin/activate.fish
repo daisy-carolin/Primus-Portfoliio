@@ -1,7 +1,9 @@
+
 # This file must be used with ". bin/activate.fish" *from fish* (http://fishshell.org)
 # you cannot run it directly
 
 function deactivate  -d "Exit virtualenv and return to normal shell environment"
+
     # reset old environment variables
     if test -n "$_OLD_VIRTUAL_PATH"
         set -gx PATH $_OLD_VIRTUAL_PATH
@@ -13,28 +15,25 @@ function deactivate  -d "Exit virtualenv and return to normal shell environment"
     end
 
     if test -n "$_OLD_FISH_PROMPT_OVERRIDE"
-        functions -e fish_prompt
-        set -e _OLD_FISH_PROMPT_OVERRIDE
-        functions -c _old_fish_prompt fish_prompt
-        functions -e _old_fish_prompt
-    end
 
-    set -e VIRTUAL_ENV
-    if test "$argv[1]" != "nondestructive"
-        # Self destruct!
         functions -e deactivate
     end
 end
+
+VIRTUAL_ENV "/home/mercy/Documents/Primus-Portfoliio/env"
 
 # unset irrelevant variables
 deactivate nondestructive
 
 set -gx VIRTUAL_ENV "/home/beth/Documents/Primus-Portfoliio/env"
 
+
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH
 
+
 # unset PYTHONHOME if set
+
 if set -q PYTHONHOME
     set -gx _OLD_VIRTUAL_PYTHONHOME $PYTHONHOME
     set -e PYTHONHOME
@@ -42,6 +41,7 @@ end
 
 if test -z "$VIRTUAL_ENV_DISABLE_PROMPT"
     # fish uses a function instead of an env var to generate the prompt.
+
 
     # save the current fish_prompt function as the function _old_fish_prompt
     functions -c fish_prompt _old_fish_prompt
@@ -68,8 +68,10 @@ if test -z "$VIRTUAL_ENV_DISABLE_PROMPT"
 
         # Restore the return status of the previous command.
         echo "exit $old_status" | .
+
         _old_fish_prompt
     end
 
     set -gx _OLD_FISH_PROMPT_OVERRIDE "$VIRTUAL_ENV"
+
 end
