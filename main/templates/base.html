@@ -104,7 +104,7 @@
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark custom-bg-color header">
     <a class="navbar-brand" href="#">
       <img src="{% static 'images/primus.jpeg'%}"
-      alt="Logo" height="80" width="80">
+      alt="Logo" height="100" width="120">
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -112,30 +112,30 @@
     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'home' %}">Home</a>
+          <a class="nav-link" href="{% url 'home' %}"><span style="color: #FFFFFF;position: relative; bottom: -10px;"> Home </span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'education' %}">Education
+          <a class="nav-link" href="{% url 'education' %}"><span style="color: #FFFFFF; position: relative; bottom: -10px;"> Education </span></a>
         </a>
           
         </li>
         <li class="nav-item">   
-          <a class="nav-link" href="{% url 'cancer_awareness' %}">Cancer Awareness
+          <a class="nav-link" href="{% url 'cancer_awareness' %}"><span style="color: #FFFFFF; position: relative; bottom: -10px;"> Cancer Awareness </span></a>
             </a>
         </li>
 
         <li class="nav-item">   
-            <a class="nav-link" href="{% url 'blog' %}">Blog
+            <a class="nav-link" href="{% url 'blog' %}"><span style="color: #FFFFFF; position: relative; bottom: -10px;"> Blog </span></a>
               </a>
           </li>
 
           <li class="nav-item">   
-            <a class="nav-link" href="{% url 'contacts' %}">Contacts
+            <a class="nav-link" href="{% url 'contacts' %}"><span style="color: #FFFFFF; position: relative; bottom: -10px;"> Contact Us </span></a>
               </a>
           </li>
           <li class="nav-item">   
             <a class="nav-link" href="{% url 'book_appointment' %}">
-              <button type="button" class="white-button">Book Appointment</button>
+              <button type="button" class="white-button" style="border: none; border-radius: 5px; padding: 10px 20px;">Book Appointment</button>
               </a>
           </li>
       </ul>
