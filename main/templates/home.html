@@ -23,7 +23,7 @@
 
     #home-intro {
         width: 100%;
-        /* height: 50vh; */
+        height: 50vh;
     }
 
     #testimonials {
@@ -93,27 +93,29 @@
 <section id="home">
 
     <div class="maincontent" style="padding: 10px; text-align: center; margin-top: 50px;">
-        <p style="margin-left: 18%; margin-top: 50px; text-align: justify;">
-            <span style="color: #022B53; font-size: larger; font-weight: bold;"> 25+ Years Experience as <br> Radiation
-                Oncologist </span>
+       
+        <p style="margin-left: 15%; margin-top: 50px; text-align: justify;">
+            <span style="color: #022B53; font-size: 40px; font-weight: bold;"> <marquee behavior="alternate" direction="right" width="40%"> 25+ Years Experience as <br> <span style="color: #008080;"> Radiation
+                Oncologist</span> </marquee></span>
         </p>
-        <p style="margin-left: 18%; font-size: 20px; margin-top: 50px; text-align: justify;"> As a dedicated doctor, I
-            not only assist<br> my
-            patients with
-            their healthcare needs<br>but also encourage anyone in need
-            of<br>assistance or examination to consult<br>with me for expert guidance and care.<br>
+
+        <p style="margin-left: 15.5%; font-size: 20px; margin-top: 50px; text-align: justify;"> As a dedicated doctor, I
+            not only assist my
+            patients with<br>
+            their healthcare needs but also encourage anyone <br> in need
+            of assistance or examination to  consult <br> with me for expert guidance and care.<br>
         </p>
         <div class="row" style="margin-left: 230px; margin-top: 50px">
             <div class="column"><button
-                    style="background-color: #022B53;color: #FFFFFF; padding: 15px 25px; border: none; border-radius: 5px;">
+                    style="background-color: #022B53;color: #FFFFFF; padding: 20px 50px; border: none; border-radius: 5px;">
                     <a style="color: #FFFFFF;" href="{% url 'download_cv' %}">Download CV</a></button>
-                <button style=" padding: 15px 25px;  margin-left: 20px; border-radius: 5px;"> <a href="" style="color: #022B53; border: 1px #022B53; 
+                <button style=" padding: 20px 50px;  margin-left: 20px; border-radius: 5px;"> <a href="" style="color: #022B53; border: 1px #022B53; 
            ">Clinical activities</a></button>
             </div>
 
         </div>
     </div>
-    <div class="img" style="position: absolute; top: 15%; right: 15%; ">
+    <div class="img" style="position: absolute; top: 15%; right: 5%; ">
         <img src="{% static 'images/primushome.jpeg'%}" height="500" width="500"
             style="float: right; margin-right: 25%;">
     </div>
@@ -121,20 +123,25 @@
 
 
 <section id="home-intro">
-    <div class="row">
-        <div class="img" style="padding-left: 19%; position: relative; bottom: 100px;">
+    <div class="head" style="position: relative; bottom: 25%; padding-right: 5%;">
+    <h4 style="font-weight: 800; font-size: 25px; color: #008080; text-align: center;">About Me</h4>
+</div>
+
+    <div class="row" style="position: relative; bottom: -10%;">
+
+        <div class="img" style="padding-left: 15.5%; position: relative; bottom: 100px;">
             <img src="{% static 'images/doclab.jpg'%}" height="400" width="450">
         </div>
         <div id="home-intro-par" style=" margin-left: 10%;">
             <p>
-                <span style="color: #022B53;font-weight: bold; font-size: larger;">Hello, I’m Primus Ochieng</span>
+                <span style="color: #022B53;font-weight: bold; font-size: larger;">Hello, I’m Dr. Primus Ochieng</span>
             </p>
             <p style="font-size: 20px;">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque<br>
-                sit amet gravida dui. Etiam in euismod sem. Suspendisse lorem quam,<br>
-                lobortis ac ultrices ut, eleifend sit amet risus. Aliquam quis<br>
-                justo porta, tincidunt est quis, dictum nisi.Suspendisse lorem<br>
-                quam, lobortis ac ultrices ut, eleifend sit amet risus. Aliquam<br>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
+                sit amet gravida<br> dui. Etiam in euismod sem. Suspendisse lorem quam,
+                lobortis ac ultrices ut, eleifend <br>sit amet risus. Aliquam quis
+                justo porta, tincidunt est quis, dictum nisi. <br>Suspendisse lorem
+                quam, lobortis ac ultrices ut, eleifend sit amet risus.<br> Aliquam
                 quis justo porta, tincidunt est quis, dictum nisi.Aliquam<br>
                 quis justo porta, tincidunt est quis, dictum nisi.
             </p>
@@ -144,8 +151,8 @@
 </section>
 
 <section id="testimonials">
-    <h4 style="font-weight: 800; color: #022B53; text-align: center;">Patient Testimonials</h4>
-<div class="row" style="padding-left: 10rem; position: relative; bottom: -20%;">
+    <h4 style="font-weight: 800; color: #008080; text-align: center; position: relative; bottom: -10%; font-size: 25px;">Patient Testimonials</h4>
+<div class="row" style="padding-left: 10rem; position: relative; bottom: -25%;">
     <div class="column">
     <div class=" flip-card">
         <div class="column flip-card-inner">
