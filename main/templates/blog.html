@@ -46,6 +46,7 @@
         font-size: 25px;
         font-weight: bold;
     }
+    
 </style>
 <div class="box">
     <p>My Latest Blog Posts</p>
@@ -59,24 +60,21 @@
 </div>
 
 <div class="container">
-    <div class="row">
-        <div class="col-md-8 mt-3 left">
-            {% for post in post_list %}
+    <div class="row row-cols-3 g-3">
+        {% for post in post_list %}
+        <div class="col">
             <div class="card mb-4">
                 <div class="card-body">
                     <h2 class="card-title">{{ post.title }}</h2>
-                    <img src="{{post.Image.url}}" class="card-img-top" alt=" " height="500px">
-                    <p class="card-text">{{post.content|slice:":200" }}</p>
-                    <p class="card-text text-muted h6">{{ post.created_on}} </p>
-                    <p class="card-text text-muted h6"> Created by {{ post.author }} </p>
-                    <a href="{% url 'post_detail' post.slug  %}" class="btn btn-primary">Read More &rarr;</a>
-
-
+                    <img src="{{ post.Image.url }}" class="card-img-top" alt="img" height="250px">
+                    <p class="card-text">{{ post.content|slice:":200" }}</p>
+                    <p class="card-text text-muted h6">{{ post.created_on }}</p>
+                    <p class="card-text text-muted h6">Created by {{ post.author }}</p>
+                    <a href="{% url 'post_detail' post.slug %}" class="btn btn-primary">Read More &rarr;</a>
                 </div>
             </div>
-            {% endfor %}
         </div>
+        {% endfor %}
     </div>
 </div>
-
 {% endblock %}
