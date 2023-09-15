@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load bootstrap5 %}
+
+{% block body_block %}
+
+<style>
+    body {
+        font-family: "Roboto", sans-serif;
+        font-size: 18px;
+        background-color: #fdfdfd;
+    }
+
+    .head_text {
+        color: white;
+    }
+
+    .card {
+        box-shadow: 0 16px 48px #E3E7EB;
+    }
+
+    .box {
+        width: 350px;
+        height: 50px;
+        background-color: teal;
+        border: 1px solid teal;
+        padding: 20px;
+        margin: 20px auto;
+        border-radius: 2%;
+        text-align: center;
+
+    }
+
+    .box p {
+        font-size: 20px;
+        color: white;
+        text-align: center;
+        font-weight: bolder;
+        position: relative;
+        bottom: 10px;
+    }
+
+    h2 {
+        color: #022B53;
+        text-align: center;
+        font-size: 25px;
+        font-weight: bold;
+    }
+</style>
+<div class="box">
+    <p>My Latest Blog Posts</p>
+</div>
+<h2>Blogs</h2>
+<div class="text">
+   <p style="text-align: center;"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br>
+     Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+      Duis aute irure dolor in <br> reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+</p>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 mt-3 left">
+            {% for post in post_list %}
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h2 class="card-title">{{ post.title }}</h2>
+                    <img src="{{post.Image.url}}" class="card-img-top" alt=" " height="500px">
+                    <p class="card-text">{{post.content|slice:":200" }}</p>
+                    <p class="card-text text-muted h6">{{ post.created_on}} </p>
+                    <p class="card-text text-muted h6"> Created by {{ post.author }} </p>
+                    <a href="{% url 'post_detail' post.slug  %}" class="btn btn-primary">Read More &rarr;</a>
+
+
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

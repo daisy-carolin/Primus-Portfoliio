@@ -1,5 +1,7 @@
 from django import forms
 from .models import UploadedFile
+from .models import *
+from django.forms import ModelForm
 
 
 class MultipleFileInput(forms.ClearableFileInput):

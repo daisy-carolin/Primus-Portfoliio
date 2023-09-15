@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load bootstrap5 %}
+
+{% block body_block %}
+
+<style>
+    .box {
+    width: 350px;
+    height: 50px;
+    background-color: teal;
+    border: 1px solid teal;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 2%;
+    text-align: center;
+
+    }
+   .box p {
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    font-weight: bolder;
+    position: relative;
+    bottom: 10px;
+   }
+   h2{
+    color: #022B53;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+}
+</style>
+<div class="box">
+    <p>Book your slot</p>
+</div>
+<h2>My availability Calendar</h2>
+
+<!-- Calendly inline widget begin -->
+<div class="calendly-inline-widget" data-url="https://calendly.com/primusochieng/book-your-appointment-with-dr-primus?text_color=000000&primary_color=008080" style="min-width:320px;height:700px;"></div>
+<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+<!-- Calendly inline widget end -->
+
+
+
+{% endblock %}
