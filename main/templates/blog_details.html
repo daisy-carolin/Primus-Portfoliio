@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load bootstrap5 %}
+
+{% block body_block %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 card mb-4  mt-3 left  top">
+      <div class="card-body">
+        <h1>{% block title %} {{ object.title }} {% endblock title %}</h1>
+
+        <img src="{{post.Image.url}}" class="card-img-top" alt=" " height="500px">
+        <p class="card-text ">{{ object.content | safe }}</p>
+        <p class="card-text text-muted h6">{{ post.created_on}} </p>
+        <p class="card-text text-muted h6"> Created by {{ post.author }} </p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

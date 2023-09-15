@@ -2,7 +2,9 @@ from django.shortcuts import render, redirect
 from django.http import FileResponse
 from .forms import UploadFileForm, UploadFileForm2
 from django.http import HttpResponse
-from .models import UploadedFile
+from .models import *
+from .forms import *
+from django.views import generic
 import os
 
 # Create your views here.
@@ -17,9 +19,6 @@ def education(request):
 def cancer_awareness(request):
     return render(request, 'cancer_awareness.html')
 
-def blog(request):
-    return render(request, 'blog.html')
-
 def contacts(request):
     return render(request, 'contacts.html')
 
@@ -32,3 +31,12 @@ def download_cv(request):
     response['Content-Type'] = 'application/pdf'
     response['Content-Disposition'] = f'attachment; filename="{os.path.basename(cv_file_path)}"'
     return response
+
+
+class PostList(generic.ListView):
+    queryset = Post.objects.filter(status=1).order_by('-created_on')
+    template_name = 'blog.html'
+
+class PostDetail(generic.DetailView):
+    model = Post
+    template_name = 'blog_details.html'
